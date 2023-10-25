@@ -11,8 +11,13 @@ on:
 
 jobs:
   # Build job
-  build:
+  hinata-ui-build:
+    
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./hinata-ui
+
     steps:
     
       - name: Checkout
