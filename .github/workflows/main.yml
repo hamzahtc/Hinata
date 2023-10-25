@@ -1,4 +1,4 @@
-name: Check NextJs build
+name: Check Hinata build
 
 on:
   # Runs on pushes targeting the default branch
