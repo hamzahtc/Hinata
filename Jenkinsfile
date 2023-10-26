@@ -5,6 +5,7 @@ pipeline {
         // Define environment variables if needed
         NODEJS_VERSION = '18'
         NPM_REGISTRY = 'https://registry.npmjs.org'
+        HINATA_UI_PATH = 'hinata-ui'
     }
 
     stages {
@@ -19,13 +20,13 @@ pipeline {
                 sh "nvm install ${NODEJS_VERSION}"
                 sh "nvm use ${NODEJS_VERSION}"
                 sh "npm config set registry ${NPM_REGISTRY}"
-                sh "npm install"
+                sh "cd ${PROJECT_DIRECTORY} && npm install"
             }
         }
 
-        stage('Build') {
+        stage('Build hinata-ui') {
             steps {
-                sh "npm run build"
+                sh "cd ${PROJECT_DIRECTORY} && npm run build"
             }
         }
 
