@@ -1,5 +1,12 @@
 pipeline {
   agent any
+
+  environment {
+    HINATA_UI_PATH = 'hinata-ui'
+  }
+
+  tools {nodejs "NodeJS18"}
+
   stages {
     stage('Checkout') {
       steps {
@@ -18,9 +25,6 @@ pipeline {
         sh "cd ${HINATA_UI_PATH} && npm run build"
       }
     }
-
-  }
-  environment {
-    HINATA_UI_PATH = 'hinata-ui'
+    
   }
 }
