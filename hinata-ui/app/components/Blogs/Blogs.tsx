@@ -1,7 +1,11 @@
-import { Stack } from "@mui/material";
+import { Stack, Typography } from "@mui/material";
 
 const Blogs = () => {
-  return <Stack>Hinata is the best</Stack>;
+  return (
+    <Stack alignItems="center" sx={{ p: 10 }}>
+      <Typography fontSize={30}>Hinata is the best</Typography>
+    </Stack>
+  );
 };
 
 export default Blogs;
