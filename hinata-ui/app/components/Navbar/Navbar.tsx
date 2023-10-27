@@ -9,7 +9,7 @@ const Navbar = () => {
       <AppBar position="static">
         <Toolbar>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Hinata parle pas chinois
+            Hinata
           </Typography>
         </Toolbar>
       </AppBar>
