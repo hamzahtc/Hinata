@@ -1,5 +1,13 @@
 pipeline {
   agent any
+  
+  tools {
+    nodejs 'NodeJS18'
+  }
+  environment {
+    HINATA_UI_PATH = 'hinata-ui'
+  }
+
   stages {
     stage('Checkout') {
       steps {
@@ -19,11 +27,5 @@ pipeline {
       }
     }
 
-  }
-  tools {
-    nodejs 'NodeJS18'
-  }
-  environment {
-    HINATA_UI_PATH = 'hinata-ui'
   }
 }
