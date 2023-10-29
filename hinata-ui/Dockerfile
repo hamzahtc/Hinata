@@ -1,4 +1,5 @@
 FROM node:20.9.0 as node
+USER root
 WORKDIR /app
 
 FROM node as composer
