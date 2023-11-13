@@ -1,5 +1,5 @@
 pipeline {
-  agent { dockerfile true }
+  agent any
   tools {
     nodejs 'NodeJS18'
   }
@@ -27,6 +27,7 @@ pipeline {
     }
 
     stage('Build hinata-ui docker image') {
+      agent { dockerfile true }
       steps {
         sh 'cd ${HINATA_UI_PATH} && docker build -t hinata-ui:latest .'
       }
