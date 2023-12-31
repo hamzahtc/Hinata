@@ -6,7 +6,7 @@ pipeline {
   environment {
     HINATA_UI_PATH = 'hinata-ui'
   }
-  
+
   stages {
     stage('Checkout') {
       steps {
@@ -25,13 +25,5 @@ pipeline {
         sh "cd ${HINATA_UI_PATH} && npm run build"
       }
     }
-
-    stage('Build hinata-ui docker image') {
-      agent { dockerfile true }
-      steps {
-        sh 'cd ${HINATA_UI_PATH} && docker build -t hinata-ui:latest .'
-      }
-    }
-
   }
 }

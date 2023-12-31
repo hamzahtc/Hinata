@@ -10,7 +10,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  # Build job
+  # Build hinata-ui job
   hinata-ui-build:
     
     runs-on: ubuntu-latest
