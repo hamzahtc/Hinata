@@ -1,21 +1,22 @@
 name: Run Jenkins Pipeline
 
 on:
-  # Runs on pushes targeting the default branch
   push:
     branches: ["main"]
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
 jobs:
-  launch_jenkins_job:
+  jenkins-job:
     runs-on: ubuntu-latest
     defaults:
       run:
         working-directory: ./hinata-ui
 
     steps:
-      - name: Trigger Jenkins Job
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Node
         uses: sbitio/trigger-jenkins-job@master
         with:
           JENKINS_USER: ${{ secrets.JENKINS_USER }}
